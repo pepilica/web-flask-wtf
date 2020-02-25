@@ -15,5 +15,10 @@ def training(prof):
     return render_template('train.html', name=prof)
 
 
+@app.route('/list_prof/<param>')
+def list_prof(param):
+    return render_template('jobs.html', name=param)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
