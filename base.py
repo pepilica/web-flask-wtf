@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -12,12 +12,18 @@ def colon(title):
 
 @app.route('/training/<prof>')
 def training(prof):
-    return render_template('train.html', name=prof)
+    return render_template('train.html', name=prof, title='Тренировка')
 
 
 @app.route('/list_prof/<param>')
 def list_prof(param):
-    return render_template('jobs.html', name=param)
+    return render_template('jobs.html', name=param, title='Профессии')
+
+
+@app.route('/answer', methods=['POST', 'GET'])
+@app.route('/auto_answer', methods=['POST', 'GET'])
+def answer():
+    return render_template('auto_answer.html', title='Регистрация')
 
 
 if __name__ == '__main__':
