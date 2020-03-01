@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<img src="/static/img/logo.png" alt="?">
+<div>
+    {{ form.csrf_token }}
+</div>
+<form action="" method="post" novalidate>
+{% for field in form if field.name != 'csrf_token' %}
+<div>
+    {{ field.label() }}
+    {{ field() }}
+    {% for error in field.errors %}
+    <div class="error">{{ error }}</div>
+    {% endfor %}
+</div>
+{% endfor %}
+</form>
+{% endblock %}
