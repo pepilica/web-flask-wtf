@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
+from random import randint
+import json
 
 
 app = Flask(__name__)
@@ -54,6 +56,15 @@ def distribution(people):
 @app.route('/table/<sex>/<int:age>')
 def room_decor(sex, age):
     return render_template('table.html', sex=sex, age=age)
+
+
+@app.route('/member')
+def member():
+    with open('staff.json') as f:
+        file = f.read()
+    file_json = json.loads(file)
+    print(file_json)
+    return render_template('member.html', member=file_json[str(randint(1, 6))])
 
 
 if __name__ == '__main__':

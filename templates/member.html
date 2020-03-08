@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block main %}
+<div class='container'>
+	<img src='{{member["photo"]}}' alt="" style="margin: auto">
+	<h2 align="center">{{member["name"]}} {{member["surname"]}}</h2>
+	<p align="center">{{member["profile"]}}</p>
+</div>
+{% endblock %}
