@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block main %}
+<h2 align="center">Оформление каюты</h2>
+<div class='container'>
+	<div class='row'>
+		<div class='col'>
+			Цвет стен
+		</div>
+		<div class='col'>
+			Эмблема
+		</div>
+	</div>
+	<div class='row'>
+			{% if sex=='female' %}
+				{% if age < 21 %}
+					<div class='col' style="background-color: #FF6347"></div>
+					<div class="col">
+						<img src="/static/img/child.png" alt="">
+					</div>
+				{% else %}
+					<div class='col' style="background-color: #FF4500"></div>
+					<div class="col">
+						<img src="/static/img/adult.jpg" alt="">
+					</div>
+				{% endif %}
+			{% elif sex=='male' %}
+				{% if age < 21 %}
+					<div class='col' style="background-color: #B0C4DE"></div>
+					<div class="col">
+						<img src="/static/img/child.png" alt="">
+					</div>
+				{% else %}
+					<div class='col' style="background-color: #4169E1"></div>
+					<div class="col">
+						<img src="/static/img/adult.jpg" alt="">
+					</div>
+				{% endif %}
+			{% endif %}
+	</div>
+</div>
+{% endblock %}
