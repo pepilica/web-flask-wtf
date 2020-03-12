@@ -63,8 +63,7 @@ def member():
     with open('staff.json') as f:
         file = f.read()
     file_json = json.loads(file)
-    print(file_json)
-    return render_template('member.html', member=file_json[str(randint(1, 6))])
+    return render_template('member.html', member=file_json[str(randint(1, 5))])
 
 
 if __name__ == '__main__':
