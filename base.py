@@ -49,9 +49,8 @@ def login():
 
 
 @app.route('/distribution')
-def distribution():
-
-    return render_template('distribution.html')
+def distribution(staff):
+    return render_template('distribution.html', people=staff)
 
 
 @app.route('/table/<sex>/<int:age>')
