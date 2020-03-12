@@ -48,9 +48,10 @@ def login():
     return render_template('login.html', title='Авторизация', form=form)
 
 
-@app.route('/distribution/<people>')
-def distribution(people):
-    return render_template('distribution.html', people=people.replace(', ', ',').split(','))
+@app.route('/distribution')
+def distribution():
+
+    return render_template('distribution.html')
 
 
 @app.route('/table/<sex>/<int:age>')

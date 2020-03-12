@@ -1,0 +1,32 @@
+{
+	"1": {
+		"name": "Энди",
+		"surname": "Уир",
+		"photo": "https://pngimg.com/uploads/robot/robot_PNG79.png",
+		"profile": "инженер, нейробиолог, программист" 
+	},
+	"2": {
+		"name": "Георгий",
+		"surname": "Симаков",
+		"photo": "https://pngicon.ru/file/uploads/koshka.png",
+		"profile": "Химик, старший инженер"
+	},
+	"3": {
+		"name": "Клинт",
+		"surname": "Блэк",
+		"photo": "https://pngimg.com/uploads/cowboy/cowboy_PNG55.png",
+		"profile": "Старший программист, пилот дронов"
+	},
+	"4": {
+		"name": "Синь",
+		"surname": "Хуань",
+		"photo": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+		"profile": "Специалист по радиационной защите"
+	},
+	"5": {
+		"name": "Василий",
+		"surname": "Васильев",
+		"photo": "https://www.stickpng.com/assets/images/580b585b2edbce24c47b2a70.png",
+		"profile": "Врач, нейробиолог"
+	}
+}
