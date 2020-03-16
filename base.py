@@ -61,7 +61,7 @@ def room_decor(sex, age):
 
 @app.route('/member')
 def member():
-    with open('staff.json') as f:
+    with open('staff.json', encoding='utf-8') as f:
         file = f.read()
     file_json = json.loads(file)
     return render_template('member.html', member=file_json[str(randint(1, 5))])
