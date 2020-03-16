@@ -49,7 +49,8 @@ def login():
 
 
 @app.route('/distribution')
-def distribution(staff):
+def distribution():
+    staff = ['Энди Уир', 'Марк Мёрфи', 'Виктор Викторов', 'Венката Капур', 'Шон Бин', 'Тедди Сандерс']
     return render_template('distribution.html', people=staff)
 
 
