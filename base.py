@@ -4,6 +4,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired
 from random import randint
 import json
+import os
 
 
 app = Flask(__name__)
@@ -65,6 +66,21 @@ def member():
         file = f.read()
     file_json = json.loads(file)
     return render_template('member.html', member=file_json[str(randint(1, 5))])
+
+
+@app.route('/gallery', methods=['GET', 'POST'])
+def gallery():
+    files = list(os.listdir('static/img/views'))
+    print(files)
+    if request.method == 'POST':
+        file = request.files['file']
+        number = len(files) + 1
+        file.save(f'static/img/views/{number}.jpg')
+        files = list(os.listdir('static/img/views'))
+        return render_template('photo_upload.html', files=files)
+    elif request.method == 'GET':
+        files = list(os.listdir('static/img/views'))
+        return render_template('photo_upload.html', files=files)
 
 
 if __name__ == '__main__':
